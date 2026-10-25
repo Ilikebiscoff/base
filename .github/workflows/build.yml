@@ -17,7 +17,7 @@ jobs:
         run: |
           chmod +x gradlew
           ./gradlew build --no-daemon --stacktrace > build.log 2>&1 || {
-            ERR=$(grep -E "error:|What went wrong|Could not|FAILED|Caused by|^\s+> " build.log | head -40 | sed ':a;N;$!ba;s/\n/%0A/g')
+            ERR=$(grep -E -A3 "error:|What went wrong|Could not" build.log | head -40 | sed ':a;N;$!ba;s/\n/%0A/g')
             echo "::error title=Build failed::$ERR"
             exit 1
           }

@@ -47,8 +47,9 @@ public record BlockInfo(Category category, int weight) {
 			|| b instanceof BrewingStandBlock || b instanceof AnvilBlock)
 			return new BlockInfo(Category.UTILITY, 2);
 
-		if (b instanceof CraftingTableBlock || b instanceof BedBlock || b instanceof PistonBaseBlock
-			|| b instanceof ObserverBlock || b instanceof TntBlock || b == Blocks.GOLD_BLOCK || b == Blocks.IRON_BLOCK)
+		String id = BuiltInRegistries.BLOCK.getKey(b).getPath();
+		if (id.equals("crafting_table") || id.endsWith("_bed") || id.contains("piston") && !id.contains("head")
+			|| id.equals("observer") || id.equals("tnt") || b == Blocks.GOLD_BLOCK || b == Blocks.IRON_BLOCK)
 			return new BlockInfo(Category.DECOR, 1);
 		return null;
 	}
