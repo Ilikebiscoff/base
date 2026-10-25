@@ -31,6 +31,9 @@ public class Config {
 	public boolean alertFlash = true;
 	public boolean stopOnFind = true;
 
+	// Updates
+	public boolean autoUpdate = true;   // check GitHub on launch and download new builds (applied on next restart)
+
 	// Auto search (/rtp loop)
 	public int scanSeconds = 12;       // how long to scan after each teleport
 	public String rtpCommand = "rtp";  // command without the slash

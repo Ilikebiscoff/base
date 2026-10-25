@@ -31,4 +31,5 @@ jobs:
         with:
           tag_name: latest
           name: Latest build
+          body: ${{ github.sha }}
           files: build/libs/basehunter-1.0.0.jar

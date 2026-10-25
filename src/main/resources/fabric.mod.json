@@ -7,6 +7,11 @@
 	"authors": ["you"],
 	"license": "MIT",
 	"environment": "client",
+	"custom": {
+		"basehunter": {
+			"commit": "${commit}"
+		}
+	},
 	"entrypoints": {
 		"client": ["dev.basehunter.BaseHunterClient"]
 	},

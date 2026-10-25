@@ -13,9 +13,11 @@ dependencies {
 }
 
 processResources {
+	def commit = System.getenv("GITHUB_SHA") ?: "dev"
 	inputs.property "version", project.version
+	inputs.property "commit", commit
 	filesMatching("fabric.mod.json") {
-		expand "version": project.version
+		expand "version": project.version, "commit": commit
 	}
 }
 

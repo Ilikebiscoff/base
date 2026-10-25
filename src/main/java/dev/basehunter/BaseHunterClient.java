@@ -25,6 +25,7 @@ public class BaseHunterClient implements ClientModInitializer {
 	public void onInitializeClient() {
 		Config.load();
 		BlockInfo.init();
+		Updater.checkAsync(false);
 
 		KeyMapping.Category category = KeyMapping.Category.register(Identifier.fromNamespaceAndPath(MOD_ID, "main"));
 		openGui = KeyMappingHelper.registerKeyMapping(
@@ -48,6 +49,7 @@ public class BaseHunterClient implements ClientModInitializer {
 		while (toggleAuto.consumeClick()) {
 			if (mc.player != null) AutoFinder.INSTANCE.toggle();
 		}
+		Updater.tick(mc);
 		BaseDetector.INSTANCE.tick(mc);
 		AutoFinder.INSTANCE.tick(mc);
 		Alerts.tick(mc);
