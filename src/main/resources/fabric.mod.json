@@ -1,0 +1,19 @@
+{
+	"schemaVersion": 1,
+	"id": "basehunter",
+	"version": "${version}",
+	"name": "BaseHunter",
+	"description": "Scans loaded chunks for unnatural chest clusters and base blocks, ESP for bases and players, and an auto /rtp base-finding loop.",
+	"authors": ["you"],
+	"license": "MIT",
+	"environment": "client",
+	"entrypoints": {
+		"client": ["dev.basehunter.BaseHunterClient"]
+	},
+	"depends": {
+		"fabricloader": ">=0.19.5",
+		"minecraft": "~26.1.2",
+		"java": ">=25",
+		"fabric-api": "*"
+	}
+}
